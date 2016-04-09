@@ -3,7 +3,7 @@
  */
 
 
-apiApp.controller('ApiController', function($scope, $http) {
+bouncerApp.controller('ApiController', function($scope, $http) {
     console.log('in controller');
     var url = "http://localhost:3000/profile";
 
