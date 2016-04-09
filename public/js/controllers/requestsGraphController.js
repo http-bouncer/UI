@@ -8,6 +8,7 @@ bouncerApp.controller('RequestsGraphController', function($scope, $interval) {
 
     $scope.graphOff = true;
     $scope.benchmarkCompleted = false;
+    $scope.benchmarkInput = "";
 
     $scope.resetGraph = function() {
         $scope.labels =['', '', '', '', '', ''];
@@ -43,7 +44,7 @@ bouncerApp.controller('RequestsGraphController', function($scope, $interval) {
                 $scope.stopBenchmarking();
             }
 
-        }, 500);
+        }, 3000);
 
         $scope.stopBenchmarking = function() {
             if (angular.isDefined($scope.Benchmarking)) {

@@ -21,8 +21,10 @@
 <div class="container box col-md-6 col-md-offset-3 graphContainer">
 
     <div class="row">
-        <div class="col-lg-6 col-md-offset-3 text-center">
-            <h1></h1>
+        <div class="col-lg-6 col-md-offset-3 text-center ">
+            <div class="form-group" ng-show="graphOff" id="benchmark-input-div">
+                <input  class="form-control" name="benchmark-input" ng-model="benchmarkInput" id="benchmark-input" placeholder="Something">
+            </div>
             <button class="btn btn-success btn-lg" id="showRequestsGraph" ng-show="graphOff" ng-click="startGraph()">
                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                 Start
@@ -32,6 +34,7 @@
                 <span class="glyphicon glyphicon-list-alt" aria-hidden="true"></span>
                 Stats
             </button>
+
 
             <div class="spinner" ng-hide="graphOff">
                 <div class="bounce1"></div>
