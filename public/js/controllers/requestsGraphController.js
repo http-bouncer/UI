@@ -4,6 +4,7 @@
 
 bouncerApp.controller('RequestsGraphController', function($scope, $interval) {
     console.log('in req graph controller');
+    $scope.pageClass = 'page-benchmarking';
 
     $scope.graphOff = true;
     $scope.benchmarkCompleted = false;

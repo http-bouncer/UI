@@ -6,6 +6,7 @@
 bouncerApp.controller('ApiController', function($scope, $http) {
     console.log('in controller');
     var url = "http://localhost:3000/profile";
+    $scope.pageClass = 'page-page1';
 
     $scope.submit = function() {
         var data = $.param({
