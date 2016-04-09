@@ -25,7 +25,7 @@ bouncerApp.controller('RequestsGraphController', function($scope, $interval) {
     };
 
     var timeCounter = 0;
-    $scope.startGraph = function(){
+    $scope.startBenchmarking = function(){
         $scope.benchmarkCompleted = false;
         $scope.graphOff = false;
         // Simulate async data update
