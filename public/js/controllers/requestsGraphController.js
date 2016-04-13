@@ -2,7 +2,7 @@
  * Created by tugceakin on 4/8/16.
  */
 
-bouncerApp.controller('RequestsGraphController', function($scope, $interval) {
+bouncerApp.controller('RequestsGraphController', function($scope, $interval, $http) {
     console.log('in req graph controller');
     $scope.pageClass = 'page-benchmarking';
 
@@ -26,6 +26,19 @@ bouncerApp.controller('RequestsGraphController', function($scope, $interval) {
 
     var timeCounter = 0;
     $scope.startBenchmarking = function(){
+
+        $http({
+            method: 'POST',
+            url: "/startBenchmarking",
+            headers: {'Content-Type': 'application/x-www-form-urlencoded'}, //x-www-form-urlencoded
+                        //'Access-Control-Allow-Origin': '*'},
+            data: {benchmarkInput: $scope.benchmarkInput}
+        }).success(function (data) {
+            console.log(data);
+        });
+
+    
+
         $scope.benchmarkCompleted = false;
         $scope.graphOff = false;
         // Simulate async data update

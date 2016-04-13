@@ -1,10 +1,22 @@
 package main
 
 import (
+	"encoding/json"
 	"log"
 	"net/http"
 	"os"
 )
+
+func parseBenchmarkingForm(w http.ResponseWriter, r *http.Request) {
+
+	decoder := json.NewDecoder(r.Body)
+	var benchmarkMap map[string]interface{}
+	err := decoder.Decode(&benchmarkMap)
+	if err != nil {
+		panic(err)
+	}
+	log.Println(benchmarkMap["benchmarkInput"])
+}
 
 func main() {
 
@@ -20,5 +32,6 @@ func main() {
 	}
 
 	log.Println("listening on", listen)
+	http.HandleFunc("/startBenchmarking", parseBenchmarkingForm)
 	http.ListenAndServe(listen, nil)
 }
